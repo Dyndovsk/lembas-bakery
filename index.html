@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lembas Bakery - Рецепты для похода за Эребор</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #f5f5dc;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #8b4513;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+        .language-switcher {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #a0522d;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        .language-switcher select {
+            background-color: #f5f5dc;
+            border: none;
+            padding: 3px;
+            border-radius: 3px;
+        }
+        nav {
+            background-color: #a0522d;
+            padding: 10px;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav li {
+            margin: 0 15px;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        main {
+            padding: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .recipe-card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        footer {
+            background-color: #8b4513;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+        .secret {
+            background-color: #ffebcd;
+            border-left: 5px solid #d2691e;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="language-switcher">
+            <select id="language-selector">
+                <option value="ru">Русский</option>
+                <option value="en">English</option>
+                <option value="el">Quenya</option>
+            </select>
+        </div>
+        <h1 data-lang="ru">Lembas Bakery</h1>
+        <h1 data-lang="en" class="hidden">Lembas Bakery</h1>
+        <h1 data-lang="el" class="hidden">Lembas Massánië</h1>
+        
+        <p data-lang="ru">Рецепты, которые спасут тебя от голодной смерти в походе за Эребор</p>
+        <p data-lang="en" class="hidden">Recipes to save you from starvation on the journey to Erebor</p>
+        <p data-lang="el" class="hidden">Massánië i haryuval tye morë úcarinna Ereboro</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#lembas" data-lang="ru">Лембас</a>
+                <a href="#lembas" data-lang="en" class="hidden">Lembas</a>
+                <a href="#lembas" data-lang="el" class="hidden">Lembas</a></li>
+            <li><a href="#stew" data-lang="ru">Походное рагу</a>
+                <a href="#stew" data-lang="en" class="hidden">Trail Stew</a>
+                <a href="#stew" data-lang="el" class="hidden">Hrávë yulma</a></li>
+            <li><a href="#rabbit" data-lang="ru">Жареный кролик</a>
+                <a href="#rabbit" data-lang="en" class="hidden">Roasted Rabbit</a>
+                <a href="#rabbit" data-lang="el" class="hidden">Rapáca hrávë</a></li>
+            <li><a href="#about" data-lang="ru">О нас</a>
+                <a href="#about" data-lang="en" class="hidden">About</a>
+                <a href="#about" data-lang="el" class="hidden">Má men</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <!-- Лембас -->
+        <section id="lembas" class="recipe-card">
+            <h2 data-lang="ru">Эльфийский хлеб Лембас</h2>
+            <h2 data-lang="en" class="hidden">Elven Lembas Bread</h2>
+            <h2 data-lang="el" class="hidden">Lembas Eldaiva</h2>
+            
+            <p data-lang="ru">Один маленький кусочек этого хлеба может насытить взрослого человека на целый день.</p>
+            <p data-lang="en" class="hidden">One small bite of this bread is enough to fill the stomach of a grown man for a whole day.</p>
+            <p data-lang="el" class="hidden">Corma pitya i masso sina harya hostaina atanwa ar síra aurë.</p>
+            
+            <h3 data-lang="ru">Ингредиенты:</h3>
+            <h3 data-lang="en" class="hidden">Ingredients:</h3>
+            <h3 data-lang="el" class="hidden">Yávi:</h3>
+            
+            <ul data-lang="ru">
+                <li>2 чашки муки из зерен маллорна</li>
+                <li>1 чашка лесного меда</li>
+                <li>1/2 чашки сливочного масла</li>
+                <li>Щепотка соли</li>
+                <li>1/4 чашки молока</li>
+                <li>Листья маллорна для обертывания</li>
+            </ul>
+            <ul data-lang="en" class="hidden">
+                <li>2 cups of mallorn grain flour</li>
+                <li>1 cup of forest honey</li>
+                <li>1/2 cup of butter</li>
+                <li>Pinch of salt</li>
+                <li>1/4 cup of milk</li>
+                <li>Mallorn leaves for wrapping</li>
+            </ul>
+            <ul data-lang="el" class="hidden">
+                <li>2 cuppa mallorno mitto</li>
+                <li>1 cuppa taurë lisseo</li>
+                <li>1/2 cuppa mallo</li>
+                <li>Pitya sal</li>
+                <li>1/4 cuppa milque</li>
+                <li>Mallorno lasse envinyanta</li>
+            </ul>
+            
+            <h3 data-lang="ru">Приготовление:</h3>
+            <h3 data-lang="en" class="hidden">Preparation:</h3>
+            <h3 data-lang="el" class="hidden">Car:</h3>
+            
+            <ol data-lang="ru">
+                <li>Разогреть духовку до 180°C.</li>
+                <li>Смешать муку и соль в большой миске.</li>
+                <li>Добавить мед и растопленное масло, тщательно перемешать.</li>
+                <li>Постепенно влить молоко, замешивая тесто до однородной консистенции.</li>
+                <li>Раскатать тесто толщиной около 1 см и нарезать на квадраты.</li>
+                <li>Выпекать 15-20 минут до золотистого цвета.</li>
+                <li>Дать остыть и завернуть каждый кусочек в лист маллорна.</li>
+            </ol>
+            <ol data-lang="en" class="hidden">
+                <li>Preheat oven to 350°F (180°C).</li>
+                <li>Mix flour and salt in a large bowl.</li>
+                <li>Add honey and melted butter, mix thoroughly.</li>
+                <li>Gradually add milk, kneading the dough until smooth.</li>
+                <li>Roll out the dough to about 1 cm thickness and cut into squares.</li>
+                <li>Bake for 15-20 minutes until golden.</li>
+                <li>Let cool and wrap each piece in a mallorn leaf.</li>
+            </ol>
+            <ol data-lang="el" class="hidden">
+                <li>Uta nár 180°C.</li>
+                <li>Mista mitto ar sal i andava tano.</li>
+                <li>Anna lisse ar utina mallo, mista mára.</li>
+                <li>Anna milque pí, mista massa.</li>
+                <li>Latya massa 1 cm pella ar resta quadra.</li>
+                <li>Pusta 15-20 minúte laurëa.</li>
+                <li>Hlá massa ar envinyanta mallorno lasse.</li>
+            </ol>
+            
+            <p data-lang="ru"><strong>Совет:</strong> Храните лембас в прохладном сухом месте. В походных условиях он сохраняет свежесть до 3 месяцев.</p>
+            <p data-lang="en" class="hidden"><strong>Tip:</strong> Store lembas in a cool, dry place. In trail conditions it stays fresh for up to 3 months.</p>
+            <p data-lang="el" class="hidden"><strong>Nóte:</strong> Panta lembas ringa, hrassea pa. I taure úcarin harya vanya 3 rá.</p>
+        </section>
+        
+        <!-- Походное рагу -->
+        <section id="stew" class="recipe-card">
+            <h2 data-lang="ru">Походное рагу гномов</h2>
+            <h2 data-lang="en" class="hidden">Dwarven Trail Stew</h2>
+            <h2 data-lang="el" class="hidden">Nauco hrávë yulma</h2>
+            
+            <p data-lang="ru">Сытное блюдо, которое готовили гномы во время своего путешествия.</p>
+            <p data-lang="en" class="hidden">A hearty dish prepared by dwarves during their journey.</p>
+            <p data-lang="el" class="hidden">Hrávë taura i naucor carir i lendessë.</p>
+            
+            <h3 data-lang="ru">Ингредиенты:</h3>
+            <h3 data-lang="en" class="hidden">Ingredients:</h3>
+            <h3 data-lang="el" class="hidden">Yávi:</h3>
+            
+            <ul data-lang="ru">
+                <li>500 г мяса (оленина, говядина или баранина)</li>
+                <li>2 картофелины</li>
+                <li>1 морковь</li>
+                <li>1 луковица</li>
+                <li>2 ст.л. топленого масла</li>
+                <li>Соль, перец по вкусу</li>
+                <li>1 лавровый лист</li>
+                <li>1 л воды или бульона</li>
+            </ul>
+            <ul data-lang="en" class="hidden">
+                <li>500 g meat (venison, beef or lamb)</li>
+                <li>2 potatoes</li>
+                <li>1 carrot</li>
+                <li>1 onion</li>
+                <li>2 tbsp ghee</li>
+                <li>Salt, pepper to taste</li>
+                <li>1 bay leaf</li>
+                <li>1 liter water or broth</li>
+            </ul>
+            <ul data-lang="el" class="hidden">
+                <li>500 g hrávë (cerchi, cuivië hya meara)</li>
+                <li>2 potáto</li>
+                <li>1 carote</li>
+                <li>1 sambë</li>
+                <li>2 elen mallo</li>
+                <li>Sal, pipeque</li>
+                <li>1 laurë lasse</li>
+                <li>1 liter nén hya súpa</li>
+            </ul>
+            
+            <h3 data-lang="ru">Приготовление:</h3>
+            <h3 data-lang="en" class="hidden">Preparation:</h3>
+            <h3 data-lang="el" class="hidden">Car:</h3>
+            
+            <ol data-lang="ru">
+                <li>Нарезать мясо кубиками, обжарить на масле до румяной корочки.</li>
+                <li>Добавить нарезанный лук, обжарить до прозрачности.</li>
+                <li>Залить водой или бульоном, довести до кипения.</li>
+                <li>Добавить нарезанные кубиками картофель и морковь.</li>
+                <li>Посолить, поперчить, добавить лавровый лист.</li>
+                <li>Тушить на медленном огне 1-1.5 часа до готовности мяса.</li>
+            </ol>
+            <ol data-lang="en" class="hidden">
+                <li>Cut meat into cubes, fry in oil until browned.</li>
+                <li>Add chopped onion, fry until translucent.</li>
+                <li>Add water or broth, bring to boil.</li>
+                <li>Add diced potatoes and carrot.</li>
+                <li>Season with salt, pepper and bay leaf.</li>
+                <li>Simmer on low heat for 1-1.5 hours until meat is tender.</li>
+            </ol>
+            <ol data-lang="el" class="hidden">
+                <li>Restë hrávë quadra, masta mallo laurëa.</li>
+                <li>Anna restina sambë, masta silmëa.</li>
+                <li>Anna nén hya súpa, uta ulca.</li>
+                <li>Anna restina potáto ar carote.</li>
+                <li>Anna sal, pipeque ar laurë lasse.</li>
+                <li>Yulma pí nár 1-1.5 aurë.</li>
+            </ol>
+        </section>
+        
+        <!-- Жареный кролик -->
+        <section id="rabbit" class="recipe-card">
+            <h2 data-lang="ru">Жареный кролик по-хоббитски</h2>
+            <h2 data-lang="en" class="hidden">Hobbit-style Roasted Rabbit</h2>
+            <h2 data-lang="el" class="hidden">Perianwa rapáca hrávë</h2>
+            
+            <p data-lang="ru">Секретный рецепт Сэма Гэмджи, который спас компанию от голода.</p>
+            <p data-lang="en" class="hidden">Samwise Gamgee's secret recipe that saved the company from starvation.</p>
+            <p data-lang="el" class="hidden">Samvais Gámgi quessetéma massánië i haryanë hosse úcarinna.</p>
+            
+            <h3 data-lang="ru">Ингредиенты:</h3>
+            <h3 data-lang="en" class="hidden">Ingredients:</h3>
+            <h3 data-lang="el" class="hidden">Yávi:</h3>
+            
+            <ul data-lang="ru">
+                <li>1 кролик (около 1.5 кг)</li>
+                <li>4 ст.л. сливочного масла</li>
+                <li>2 луковицы</li>
+                <li>3 зубчика чеснока</li>
+                <li>1 пучок свежего тимьяна</li>
+                <li>Соль, перец по вкусу</li>
+                <li>1/2 чашки белого вина (по желанию)</li>
+            </ul>
+            <ul data-lang="en" class="hidden">
+                <li>1 rabbit (about 1.5 kg)</li>
+                <li>4 tbsp butter</li>
+                <li>2 onions</li>
+                <li>3 garlic cloves</li>
+                <li>1 bunch fresh thyme</li>
+                <li>Salt, pepper to taste</li>
+                <li>1/2 cup white wine (optional)</li>
+            </ul>
+            <ul data-lang="el" class="hidden">
+                <li>1 rapáca (1.5 kg)</li>
+                <li>4 elen mallo</li>
+                <li>2 sambë</li>
+                <li>3 laiquë garlic</li>
+                <li>1 tixë fresh thyme</li>
+                <li>Sal, pipeque</li>
+                <li>1/2 cuppa ninquë miruvórë (ecétien)</li>
+            </ul>
+            
+            <h3 data-lang="ru">Приготовление:</h3>
+            <h3 data-lang="en" class="hidden">Preparation:</h3>
+            <h3 data-lang="el" class="hidden">Car:</h3>
+            
+            <ol data-lang="ru">
+                <li>Разделать кролика на порционные куски, промыть и обсушить.</li>
+                <li>Натереть куски солью и перцем.</li>
+                <li>Растопить масло в сковороде или походной жаровне.</li>
+                <li>Обжарить кролика со всех сторон до золотистой корочки.</li>
+                <li>Добавить нарезанный лук, чеснок и тимьян.</li>
+                <li>Если используете вино, влить его и дать немного выпариться.</li>
+                <li>Накрыть крышкой и тушить на медленном огне 30-40 минут до готовности.</li>
+            </ol>
+            <ol data-lang="en" class="hidden">
+                <li>Cut rabbit into serving pieces, wash and dry.</li>
+                <li>Rub pieces with salt and pepper.</li>
+                <li>Melt butter in a pan or trail skillet.</li>
+                <li>Fry rabbit on all sides until golden.</li>
+                <li>Add chopped onion, garlic and thyme.</li>
+                <li>If using wine, add it and let it reduce slightly.</li>
+                <li>Cover and simmer on low heat for 30-40 minutes until done.</li>
+            </ol>
+            <ol data-lang="el" class="hidden">
+                <li>Restë rapáca, hosta ar panta.</li>
+                <li>Anna sal ar pipeque.</li>
+                <li>Uta mallo i pano.</li>
+                <li>Masta rapáca laurëa.</li>
+                <li>Anna sambë, garlic ar thyme.</li>
+                <li>Ectë miruvórë, anta ar hlape.</li>
+                <li>Lappa ar yulma pí nár 30-40 minúte.</li>
+            </ol>
+            
+            <div class="secret">
+                <h3 data-lang="ru">Секретная техника Сэма:</h3>
+                <h3 data-lang="en" class="hidden">Sam's Secret Technique:</h3>
+                <h3 data-lang="el" class="hidden">Sam quessetéma:</h3>
+                
+                <p data-lang="ru">Для особого аромата Сэм всегда добавлял несколько ягод можжевельника и щепотку дикого розмарина, который собирал в Шире. Также важно не пересушить мясо - кролик готов, когда мясо легко отделяется от кости, но еще остается сочным.</p>
+                <p data-lang="en" class="hidden">For special flavor, Sam always added a few juniper berries and a pinch of wild rosemary he collected in the Shire. Also important is not to overcook - the rabbit is done when the meat easily separates from the bone but remains juicy.</p>
+                <p data-lang="el" class="hidden">Vanya lissë, Sam anta juniper yávë ar pitya wild rosemary i hostanë Shirello. Áva pusta morë - rapáca carina tá marta hosta ossë, nan harya lique.</p>
+            </div>
+        </section>
+        
+        <!-- О нас -->
+        <section id="about" class="recipe-card">
+            <h2 data-lang="ru">О Lembas Bakery</h2>
+            <h2 data-lang="en" class="hidden">About Lembas Bakery</h2>
+            <h2 data-lang="el" class="hidden">Má Lembas Massánië</h2>
+            
+            <p data-lang="ru">Наши рецепты собраны по всему Средиземью - от уютных кухонь Хоббитона до величественных залов Ривенделла. Мы тестировали каждое блюдо в настоящих походных условиях, чтобы гарантировать, что они помогут вам выжить в любом путешествии, даже самом опасном.</p>
+            <p data-lang="en" class="hidden">Our recipes are collected from all over Middle-earth - from cozy Hobbiton kitchens to the majestic halls of Rivendell. We tested each dish in real trail conditions to ensure they'll help you survive any journey, even the most dangerous.</p>
+            <p data-lang="el" class="hidden">Massánië men hostaina Endorenna - Hobbiton coirë ar Imladris hallë. Mettanë ilyë hrávë i taure úcarinna, haryuval tye ilya lendessë.</p>
+            
+            <p data-lang="ru">Основано на опыте Бильбо Бэггинса, Сэмауайза Гэмджи и компании Торина Дубощита.</p>
+            <p data-lang="en" class="hidden">Based on the experience of Bilbo Baggins, Samwise Gamgee and Thorin Oakenshield's company.</p>
+            <p data-lang="el" class="hidden">Túla Bilbo Labingi, Samvais Gámgi ar Thorin companyo.</p>
+        </section>
+    </main>
+    
+    <footer>
+        <p data-lang="ru">© 3021 Т.Э. Lembas Bakery. Все права защищены.</p>
+        <p data-lang="en" class="hidden">© 3021 T.A. Lembas Bakery. All rights reserved.</p>
+        <p data-lang="el" class="hidden">© 3021 L.A. Lembas Massánië. Ilyë righta mára.</p>
+        
+        <p data-lang="ru">Не забывайте: второй завтрак - это святое!</p>
+        <p data-lang="en" class="hidden">Remember: second breakfast is sacred!</p>
+        <p data-lang="el" class="hidden">Estë: attalë auro mára!</p>
+    </footer>
+
+    <script>
+        document.getElementById('language-selector').addEventListener('change', function() {
+            const lang = this.value;
+            
+            // Скрыть все элементы с атрибутом data-lang
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                el.classList.add('hidden');
+            });
+            
+            // Показать только элементы с выбранным языком
+            document.querySelectorAll(`[data-lang="${lang}"]`).forEach(el => {
+                el.classList.remove('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
