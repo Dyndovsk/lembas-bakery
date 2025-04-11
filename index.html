@@ -4,40 +4,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lembas Bakery - Рецепты для похода за Эребор</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="lembas-icon.png" type="image/png" sizes="64x64">
+    
     <style>
+        :root {
+            --bg-color: #f5f5dc;
+            --text-color: #333;
+            --header-color: #8b4513;
+            --nav-color: #a0522d;
+            --card-bg: #fff;
+            --secret-bg: #ffebcd;
+            --border-color: #ddd;
+            --link-color: #fff;
+        }
+        
+        [data-theme="dark"] {
+            --bg-color: #222;
+            --text-color: #f0e6d2;
+            --header-color: #5a3921;
+            --nav-color: #6b4226;
+            --card-bg: #333;
+            --secret-bg: #3a2e1e;
+            --border-color: #555;
+            --link-color: #f0e6d2;
+        }
+        
         body {
             font-family: 'Georgia', serif;
-            background-color: #f5f5dc;
-            color: #333;
+            background-color: var(--bg-color);
+            color: var(--text-color);
             margin: 0;
             padding: 0;
+            transition: all 0.3s ease;
         }
+        
         header {
-            background-color: #8b4513;
+            background-color: var(--header-color);
             color: #fff;
             padding: 20px;
             text-align: center;
             position: relative;
         }
+        
         .language-switcher {
             position: absolute;
             top: 10px;
             right: 10px;
-            background-color: #a0522d;
+            background-color: var(--nav-color);
             padding: 5px 10px;
             border-radius: 5px;
         }
+        
         .language-switcher select {
-            background-color: #f5f5dc;
+            background-color: var(--card-bg);
+            color: var(--text-color);
             border: none;
             padding: 3px;
             border-radius: 3px;
         }
+        
+        .theme-switcher {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(255,255,255,0.2);
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        
         nav {
-            background-color: #a0522d;
+            background-color: var(--nav-color);
             padding: 10px;
         }
+        
         nav ul {
             list-style-type: none;
             margin: 0;
@@ -45,53 +95,72 @@
             display: flex;
             justify-content: center;
         }
+        
         nav li {
             margin: 0 15px;
         }
+        
         nav a {
-            color: #fff;
+            color: var(--link-color);
             text-decoration: none;
             font-weight: bold;
         }
+        
         main {
             padding: 20px;
             max-width: 1000px;
             margin: 0 auto;
         }
+        
         .recipe-card {
-            background-color: #fff;
-            border: 1px solid #ddd;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
             border-radius: 5px;
             padding: 20px;
             margin-bottom: 20px;
         }
+        
         footer {
-            background-color: #8b4513;
+            background-color: var(--header-color);
             color: #fff;
             text-align: center;
             padding: 10px;
             margin-top: 20px;
         }
+        
         .secret {
-            background-color: #ffebcd;
+            background-color: var(--secret-bg);
             border-left: 5px solid #d2691e;
             padding: 15px;
             margin: 20px 0;
         }
+        
         .hidden {
             display: none;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin: 10px 0;
         }
     </style>
 </head>
 <body>
+    <!-- Кнопка переключения темы -->
+    <button class="theme-switcher" id="themeToggle">🧝</button>
+    
+    <!-- Переключатель языков -->
+    <div class="language-switcher">
+        <select id="language-selector">
+            <option value="ru">Русский</option>
+            <option value="en">English</option>
+            <option value="el">Quenya</option>
+        </select>
+    </div>
+    
     <header>
-        <div class="language-switcher">
-            <select id="language-selector">
-                <option value="ru">Русский</option>
-                <option value="en">English</option>
-                <option value="el">Quenya</option>
-            </select>
-        </div>
         <h1 data-lang="ru">Lembas Bakery</h1>
         <h1 data-lang="en" class="hidden">Lembas Bakery</h1>
         <h1 data-lang="el" class="hidden">Lembas Massánië</h1>
@@ -381,16 +450,45 @@
         <p data-lang="el" class="hidden">Estë: attalë auro mára!</p>
     </footer>
 
+    <!-- Яндекс.Метрика -->
+    <script type="text/javascript" >
+       (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+       m[i].l=1*new Date();
+       for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+       k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+       (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+       ym(101006939, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true
+       });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/101006939" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
     <script>
+        // Переключение темы
+        const themeToggle = document.getElementById('themeToggle');
+        let currentTheme = localStorage.getItem('theme') || 'light';
+        
+        document.documentElement.setAttribute('data-theme', currentTheme);
+        themeToggle.textContent = currentTheme === 'light' ? '🧝' : '🧌';
+        
+        themeToggle.addEventListener('click', () => {
+            currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            localStorage.setItem('theme', currentTheme);
+            themeToggle.textContent = currentTheme === 'light' ? '🧝' : '🧌';
+        });
+
+        // Переключение языков
         document.getElementById('language-selector').addEventListener('change', function() {
             const lang = this.value;
             
-            // Скрыть все элементы с атрибутом data-lang
             document.querySelectorAll('[data-lang]').forEach(el => {
                 el.classList.add('hidden');
             });
             
-            // Показать только элементы с выбранным языком
             document.querySelectorAll(`[data-lang="${lang}"]`).forEach(el => {
                 el.classList.remove('hidden');
             });
